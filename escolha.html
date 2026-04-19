@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Escolha seu perfil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="topbar"><a href="index.html" class="back">←</a><span></span><span></span></div>
+  <div class="sa">
+    <div class="c" style="padding-top:4px;padding-bottom:28px;display:flex;flex-direction:column;min-height:calc(100vh - 70px);">
+      <h2 class="chtitle">Como você vai usar o Higienize?</h2>
+      <p class="chsub">Você poderá alternar entre perfis a qualquer momento.</p>
+      <div class="chcards">
+        <div class="chcard on" id="cc-c" onclick="selPerfil('c')">
+          <div class="cci">🏠</div>
+          <div class="cct">Sou morador</div>
+          <p class="ccd">Encontro diaristas verificadas para cuidar do meu lar com segurança e qualidade garantida.</p>
+        </div>
+        <div class="chcard" id="cc-d" onclick="selPerfil('d')">
+          <div class="cci">✨</div>
+          <div class="cct">Sou diarista</div>
+          <p class="ccd">Ofereço meus serviços e acesso oportunidades em residências de alto padrão com melhor remuneração.</p>
+        </div>
+        <div class="chcard" id="cc-s" onclick="selPerfil('s')">
+          <div class="cci">🏢</div>
+          <div class="cct">Sou síndico</div>
+          <p class="ccd">Controlo e organizo a entrada e atuação das profissionais dentro do condomínio com mais segurança.</p>
+        </div>
+      </div>
+      <a href="login.html" class="btn bd">Continuar</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

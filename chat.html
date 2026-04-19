@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body, html { height: 100%; }
+</style>
+</head>
+<body>
+
+<div class="chat-wrap">
+  <div class="chdr">
+    <div class="chdri">
+      <a href="javascript:history.back()" class="back">←</a>
+      <div class="cav" style="background:linear-gradient(135deg,#2BA882,#1A7A5E);">M</div>
+      <div style="flex:1;">
+        <div class="cavname">Márcia Silva</div>
+        <div class="cavst">● Online agora · ✓ Verificada</div>
+      </div>
+      <button class="cmore">⋯</button>
+    </div>
+  </div>
+  <div class="chat-body">
+    <div class="cmsgs" id="cmsgs">
+      <div class="cdsep">Segunda-feira, 14 de abril</div>
+      <div class="msg r"><div class="mb">Olá! Vi sua solicitação de faxina para o dia 22. Tenho disponibilidade nesse horário 😊</div><div class="mt">09:14</div></div>
+      <div class="msg s"><div class="mb">Oi Márcia! Obrigada pelo interesse. Pode me contar mais sobre sua experiência?</div><div class="mt">09:17</div></div>
+      <div class="msg r"><div class="mb">Claro! Tenho 3 anos de experiência em residências de alto padrão em condomínios. Toda minha documentação é verificada pelo Higienize ✅</div><div class="mt">09:19</div></div>
+      <div class="msg s"><div class="mb">Perfeito! E qual seria o valor para uma faxina completa de 150m²?</div><div class="mt">09:22</div></div>
+      <div class="msg r"><div class="mb">Para esse tamanho cobro R$180. Inclui todos os cômodos, banheiros e lavanderia ✨</div><div class="mt">09:24</div></div>
+      <div class="acord">
+        <div class="actitle">Proposta de Acordo</div>
+        <div class="acsub">Faxina geral · 22 abr · 08:00 · R$180</div>
+        <button class="acabtn" onclick="openM('mac')">✓ Aceitar acordo</button>
+      </div>
+    </div>
+  </div>
+  <div class="cinbar">
+    <div class="cinbari">
+      <input class="cinput" id="cinput" placeholder="Escreva uma mensagem…">
+      <button class="csend" onclick="sendMsg()">↑</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ACORDO -->
+<div class="mover" id="mac" onclick="closeM(event,'mac')">
+  <div class="msheet">
+    <div class="mhandle"></div>
+    <div class="mtitle">🎉 Acordo fechado!</div>
+    <p class="msub">Você aceitou a proposta da Márcia Silva. Ela foi notificada e está confirmada para dia 22 de abril às 08:00. O síndico também será informado da visita.</p>
+    <a href="avaliacao.html" class="btn bd" style="margin-bottom:12px;">Ver agendamentos</a>
+    <button class="btn bo" onclick="closeModal('mac')">Fechar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

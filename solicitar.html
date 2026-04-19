@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Nova solicitação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="topbar"><a href="javascript:history.back()" class="back">←</a><span class="topbar-title">Nova solicitação</span><div class="ph"></div></div>
+  <div class="stpbar">
+    <div class="sdot act" id="d1"></div>
+    <div class="sdot" id="d2"></div>
+    <div class="sdot" id="d3"></div>
+    <div class="sdot" id="d4"></div>
+  </div>
+  <div class="sa" id="slsa">
+    <div class="c" style="padding-top:4px;padding-bottom:12px;">
+
+      <!-- PASSO 1: Tipo de serviço -->
+      <div class="spane on" id="p1">
+        <h2 class="stitle">Que serviço você precisa?</h2>
+        <p class="ssub">Selecione uma ou mais opções.</p>
+        <div class="sgrid">
+          <div class="sbtn on" onclick="this.classList.toggle('on')"><span class="sbi">🧹</span><span class="sbn">Faxina geral</span><span class="sbd">Limpeza completa</span></div>
+          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">🧺</span><span class="sbn">Lavanderia</span><span class="sbd">Lavar e dobrar</span></div>
+          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">👗</span><span class="sbn">Passar roupas</span><span class="sbd">Passadoria</span></div>
+          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">🍳</span><span class="sbn">Cozinha</span><span class="sbd">Prep. refeições</span></div>
+          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">📦</span><span class="sbn">Organização</span><span class="sbd">Armários</span></div>
+          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">🪟</span><span class="sbn">Vidros</span><span class="sbd">Janelas</span></div>
+        </div>
+      </div>
+
+      <!-- PASSO 2: Data e horário -->
+      <div class="spane" id="p2">
+        <h2 class="stitle">Quando você prefere?</h2>
+        <p class="ssub">Escolha uma data e horário.</p>
+        <div class="dgrid">
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Seg</div><div class="dnum">21</div></div>
+          <div class="dbtn on" onclick="pickD(this)"><div class="dday">Ter</div><div class="dnum">22</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Qua</div><div class="dnum">23</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Qui</div><div class="dnum">24</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Sex</div><div class="dnum">25</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Sáb</div><div class="dnum">26</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Dom</div><div class="dnum">27</div></div>
+          <div class="dbtn" onclick="pickD(this)"><div class="dday">Seg</div><div class="dnum">28</div></div>
+        </div>
+        <div class="iw"><label class="il">Horário</label>
+          <select class="if">
+            <option>08:00 — Manhã</option>
+            <option>09:00 — Manhã</option>
+            <option>13:00 — Tarde</option>
+            <option>14:00 — Tarde</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PASSO 3: Endereço -->
+      <div class="spane" id="p3">
+        <h2 class="stitle">Onde é o serviço?</h2>
+        <p class="ssub">Informe o endereço dentro do condomínio.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="iw"><label class="il">Condomínio / Endereço</label><input class="if" placeholder="Nome do condomínio, rua e número"></div>
+          <div class="iw"><label class="il">Apartamento / Bloco</label><input class="if" placeholder="Ex: Apto 204, Bloco B"></div>
+          <div class="iw"><label class="il">Tamanho do imóvel</label>
+            <select class="if">
+              <option>Até 60m²</option>
+              <option>60–120m²</option>
+              <option selected>120–200m²</option>
+              <option>Acima de 200m²</option>
+            </select>
+          </div>
+          <div class="iw"><label class="il">Observações</label><textarea class="if" rows="3" placeholder="Ex: tem pet, acesso pela portaria principal…"></textarea></div>
+        </div>
+      </div>
+
+      <!-- PASSO 4: Confirmação -->
+      <div class="spane" id="p4">
+        <h2 class="stitle">Confirme sua solicitação</h2>
+        <p class="ssub">Tudo certo? Publique e receba candidaturas de diaristas verificadas.</p>
+        <div style="background:var(--white);border-radius:20px;padding:20px;border:1px solid var(--border);margin-bottom:14px;">
+          <div class="crow"><span class="clbl">Serviço</span><span class="cval">Faxina geral</span></div>
+          <div class="crow"><span class="clbl">Data</span><span class="cval">Ter, 22 de abril</span></div>
+          <div class="crow"><span class="clbl">Horário</span><span class="cval">08:00</span></div>
+          <div class="crow"><span class="clbl">Local</span><span class="cval">Cond. Residencial Park</span></div>
+          <div class="crow"><span class="clbl">Tamanho</span><span class="cval">120–200m²</span></div>
+        </div>
+        <div class="tipbox">
+          <span style="font-size:20px;flex-shrink:0;">💡</span>
+          <div>
+            <div class="titi">Faixa estimada</div>
+            <div class="tisu">R$150 – R$200 para este perfil de serviço. Apenas diaristas com documentação verificada receberão sua solicitação.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="sfoot">
+    <div class="sfi">
+      <button class="sbkbtn" id="sbk" onclick="sBack()" style="display:none;">← Voltar</button>
+      <button class="snxtbtn" id="snxt" onclick="sNext()">Próximo →</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

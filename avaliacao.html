@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Avaliar serviço</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="topbar"><a href="javascript:history.back()" class="back">←</a><span class="topbar-title">Avaliar serviço</span><div class="ph"></div></div>
+  <div class="sa">
+    <div class="c" style="padding-top:8px;padding-bottom:32px;">
+      <div class="avdc">
+        <div class="avav" style="background:linear-gradient(135deg,#2BA882,#1A7A5E);">M</div>
+        <div>
+          <div class="avname">Márcia Silva</div>
+          <div class="avsvc">Faxina geral · 22 abr</div>
+          <div class="avdone">✓ Concluída</div>
+        </div>
+      </div>
+      <div class="avhl">
+        <div class="t">Como foi o serviço?</div>
+        <div class="s">Sua avaliação ajuda outros moradores e valoriza a profissional.</div>
+      </div>
+      <div class="starrow" id="starrow">
+        <button class="starbtn lit" onclick="setStar(1)">★</button>
+        <button class="starbtn lit" onclick="setStar(2)">★</button>
+        <button class="starbtn lit" onclick="setStar(3)">★</button>
+        <button class="starbtn lit" onclick="setStar(4)">★</button>
+        <button class="starbtn lit" onclick="setStar(5)">★</button>
+      </div>
+      <div class="taglbl">Destaques</div>
+      <div class="tagwrap">
+        <button class="tagbtn" onclick="this.classList.toggle('on')">Pontual</button>
+        <button class="tagbtn on" onclick="this.classList.toggle('on')">Caprichosa</button>
+        <button class="tagbtn" onclick="this.classList.toggle('on')">Educada</button>
+        <button class="tagbtn on" onclick="this.classList.toggle('on')">Confiável</button>
+        <button class="tagbtn" onclick="this.classList.toggle('on')">Organizada</button>
+        <button class="tagbtn" onclick="this.classList.toggle('on')">Comunicativa</button>
+      </div>
+      <div class="iw" style="margin-bottom:24px;">
+        <label class="il">Comentário</label>
+        <textarea class="if" rows="4" placeholder="Compartilhe sua experiência…">Márcia foi incrível! Casa ficou impecável, muito atenciosa com os detalhes. Volto a contratar com certeza!</textarea>
+      </div>
+      <a href="home.html" class="btn bd">Publicar avaliação</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

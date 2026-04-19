@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Painel da Diarista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="hdr">
+    <div class="hdri">
+      <div class="hrow">
+        <div><div class="hgr">Bem-vinda,</div><div class="hname"><em>Márcia</em></div></div>
+        <button class="nbell">🔔<div class="ndot"></div></button>
+      </div>
+      <!-- Badge verificada -->
+      <div style="display:flex;align-items:center;gap:8px;padding:10px 0 4px;">
+        <span class="badge bv" style="font-size:11px;">✓ Perfil Verificado</span>
+        <span style="font-size:12px;color:var(--sand);">Documentos aprovados</span>
+      </div>
+    </div>
+  </div>
+  <div class="sa">
+    <div class="c" style="padding-top:24px;padding-bottom:24px;">
+      <div class="dashgrid">
+        <div class="dashcard"><div class="dashlbl">Este mês</div><div class="dashval">R$2.340</div></div>
+        <div class="dashcard"><div class="dashlbl">Avaliação</div><div class="dashval">4.9 ⭐</div></div>
+        <div class="dashcard"><div class="dashlbl">Serviços</div><div class="dashval">13</div></div>
+        <div class="dashcard"><div class="dashlbl">Aceitação</div><div class="dashval">94%</div></div>
+      </div>
+      <div class="sh"><span class="st">Oportunidades</span><button class="sl">Filtros</button></div>
+      <div class="oppcard">
+        <div class="opprow">
+          <div><div class="opptype">Faxina geral</div><div class="opploc">Cond. Setor Bueno · 3,2 km</div></div>
+          <div class="oppprice">R$200</div>
+        </div>
+        <div class="opptags">
+          <span class="opptag">📅 Ter, 22 abr</span>
+          <span class="opptag">⏰ 08:00</span>
+          <span class="opptag">📐 120–200m²</span>
+        </div>
+        <button class="btn bd" style="font-size:14px;padding:13px;">Candidatar-se</button>
+      </div>
+      <div class="oppcard">
+        <div class="opprow">
+          <div><div class="opptype">Lavanderia + Passadoria</div><div class="opploc">Cond. Setor Oeste · 1,8 km</div></div>
+          <div class="oppprice">R$150</div>
+        </div>
+        <div class="opptags">
+          <span class="opptag">📅 Qua, 23 abr</span>
+          <span class="opptag">⏰ 09:00</span>
+          <span class="opptag">📐 60–120m²</span>
+        </div>
+        <button class="btn bd" style="font-size:14px;padding:13px;">Candidatar-se</button>
+      </div>
+      <div class="oppcard">
+        <div class="opprow">
+          <div><div class="opptype">Organização</div><div class="opploc">Cond. Jardim Premium · 5,1 km</div></div>
+          <div class="oppprice">R$120</div>
+        </div>
+        <div class="opptags">
+          <span class="opptag">📅 Sex, 25 abr</span>
+          <span class="opptag">⏰ 13:00</span>
+          <span class="opptag">📐 Até 60m²</span>
+        </div>
+        <button class="btn bd" style="font-size:14px;padding:13px;">Candidatar-se</button>
+      </div>
+    </div>
+  </div>
+  <nav class="bnav">
+    <a href="dashboard.html" class="nb on"><span class="ni">🏠</span><span class="nl">Início</span></a>
+    <a href="chat.html" class="nb"><span class="ni">💬</span><span class="nl">Chat</span></a>
+    <a href="perfil.html" class="nb"><span class="ni">👤</span><span class="nl">Perfil</span></a>
+  </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
