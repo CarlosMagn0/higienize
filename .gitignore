@@ -1,0 +1,14 @@
+# Dependências e dados locais
+backend/node_modules/
+backend/data/*.db
+backend/.env
+
+# Ambiente local e arquivos temporários
+.vscode/
+dashboard.zip
+build_fase01_pdf.py
+tmp_*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2 @@
+import 'dotenv/config'; import express from 'express'; import cors from 'cors'; import './seed.js'; import api from './routes/api.js'; import { errors,notFound } from './middleware/errors.js';
+const app=express();app.use(cors());app.use(express.json({limit:'100kb'}));app.get('/health',(_req,res)=>res.json({status:'ok',service:'higienize-api'}));app.use('/api',api);app.use(notFound);app.use(errors);const port=process.env.PORT||3000;if(process.env.NODE_ENV!=='test')app.listen(port,()=>console.log(`API disponível em http://localhost:${port}`));export default app;

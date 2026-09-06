@@ -1,0 +1,16 @@
+import Database from 'better-sqlite3';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+const filename = path.resolve(root, process.env.DATABASE_FILE || 'data/higienize.db');
+fs.mkdirSync(path.dirname(filename), { recursive: true });
+const db = new Database(filename); db.pragma('foreign_keys = ON');
+db.exec(`CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,email TEXT NOT NULL UNIQUE,password_hash TEXT NOT NULL,role TEXT NOT NULL CHECK(role IN ('CLIENTE','DIARISTA','ADMIN')),created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS diarist_profiles (user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,city TEXT NOT NULL,bio TEXT,experience_years INTEGER NOT NULL DEFAULT 0 CHECK(experience_years>=0),verified INTEGER NOT NULL DEFAULT 0 CHECK(verified IN(0,1)),active INTEGER NOT NULL DEFAULT 1 CHECK(active IN(0,1)));
+CREATE TABLE IF NOT EXISTS service_requests (id INTEGER PRIMARY KEY AUTOINCREMENT,client_id INTEGER NOT NULL REFERENCES users(id),address TEXT NOT NULL,property_size TEXT NOT NULL,notes TEXT,scheduled_at TEXT NOT NULL,estimated_value REAL CHECK(estimated_value>=0),status TEXT NOT NULL DEFAULT 'ABERTA' CHECK(status IN('ABERTA','EM_NEGOCIACAO','AGENDADA','CONCLUIDA','CANCELADA')),created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS request_services (request_id INTEGER REFERENCES service_requests(id) ON DELETE CASCADE,service_name TEXT NOT NULL,PRIMARY KEY(request_id,service_name));
+CREATE TABLE IF NOT EXISTS applications (id INTEGER PRIMARY KEY AUTOINCREMENT,request_id INTEGER NOT NULL REFERENCES service_requests(id) ON DELETE CASCADE,diarist_id INTEGER NOT NULL REFERENCES users(id),proposed_value REAL NOT NULL CHECK(proposed_value>0),message TEXT,status TEXT NOT NULL DEFAULT 'PENDENTE' CHECK(status IN('PENDENTE','ACEITA','RECUSADA')),created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,UNIQUE(request_id,diarist_id));
+CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT,request_id INTEGER NOT NULL REFERENCES service_requests(id) ON DELETE CASCADE,sender_id INTEGER NOT NULL REFERENCES users(id),content TEXT NOT NULL CHECK(length(content)<=1000),created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS reviews (id INTEGER PRIMARY KEY AUTOINCREMENT,request_id INTEGER NOT NULL UNIQUE REFERENCES service_requests(id),client_id INTEGER NOT NULL REFERENCES users(id),diarist_id INTEGER NOT NULL REFERENCES users(id),rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 5),comment TEXT,tags TEXT,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);`);
+export default db;
