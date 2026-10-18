@@ -357,3 +357,4 @@ body { font-family: var(--fb); background: var(--cream); color: var(--espresso);
 .oppprice { font-family:var(--fd);font-size:24px;font-weight:500;color:var(--terra); }
 .opptags { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px; }
 .opptag { font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px; }
+.request-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.request-actions .btn{font-size:12px;padding:8px 10px}.api-feedback{color:#a33;font-size:13px}

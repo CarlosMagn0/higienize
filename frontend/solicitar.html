@@ -26,12 +26,12 @@
         <h2 class="stitle">Que serviço você precisa?</h2>
         <p class="ssub">Selecione uma ou mais opções.</p>
         <div class="sgrid">
-          <div class="sbtn on" onclick="this.classList.toggle('on')"><span class="sbi">01</span><span class="sbn">Faxina geral</span><span class="sbd">Limpeza completa</span></div>
-          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">02</span><span class="sbn">Lavanderia</span><span class="sbd">Lavar e dobrar</span></div>
-          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">03</span><span class="sbn">Passar roupas</span><span class="sbd">Passadoria</span></div>
-          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">04</span><span class="sbn">Cozinha</span><span class="sbd">Prep. refeições</span></div>
-          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">05</span><span class="sbn">Organização</span><span class="sbd">Armários</span></div>
-          <div class="sbtn" onclick="this.classList.toggle('on')"><span class="sbi">06</span><span class="sbn">Vidros</span><span class="sbd">Janelas</span></div>
+          <div class="sbtn on" data-service="Faxina geral" onclick="this.classList.toggle('on')"><span class="sbi">01</span><span class="sbn">Faxina geral</span><span class="sbd">Limpeza completa</span></div>
+          <div class="sbtn" data-service="Lavanderia" onclick="this.classList.toggle('on')"><span class="sbi">02</span><span class="sbn">Lavanderia</span><span class="sbd">Lavar e dobrar</span></div>
+          <div class="sbtn" data-service="Passar roupas" onclick="this.classList.toggle('on')"><span class="sbi">03</span><span class="sbn">Passar roupas</span><span class="sbd">Passadoria</span></div>
+          <div class="sbtn" data-service="Cozinha" onclick="this.classList.toggle('on')"><span class="sbi">04</span><span class="sbn">Cozinha</span><span class="sbd">Prep. refeições</span></div>
+          <div class="sbtn" data-service="Organização" onclick="this.classList.toggle('on')"><span class="sbi">05</span><span class="sbn">Organização</span><span class="sbd">Armários</span></div>
+          <div class="sbtn" data-service="Vidros" onclick="this.classList.toggle('on')"><span class="sbi">06</span><span class="sbn">Vidros</span><span class="sbd">Janelas</span></div>
         </div>
       </div>
 
@@ -39,7 +39,7 @@
       <div class="spane" id="p2">
         <h2 class="stitle">Quando você prefere?</h2>
         <p class="ssub">Escolha uma data e horário.</p>
-        <div class="dgrid">
+        <div class="iw"><label class="il" for="scheduleDate">Data do serviço</label><input id="scheduleDate" class="if" type="date" required></div><div class="dgrid" style="display:none">
           <div class="dbtn" onclick="pickD(this)"><div class="dday">Seg</div><div class="dnum">21</div></div>
           <div class="dbtn on" onclick="pickD(this)"><div class="dday">Ter</div><div class="dnum">22</div></div>
           <div class="dbtn" onclick="pickD(this)"><div class="dday">Qua</div><div class="dnum">23</div></div>
@@ -50,7 +50,7 @@
           <div class="dbtn" onclick="pickD(this)"><div class="dday">Seg</div><div class="dnum">28</div></div>
         </div>
         <div class="iw"><label class="il">Horário</label>
-          <select class="if">
+          <select id="scheduleTime" class="if">
             <option>08:00 — Manhã</option>
             <option>09:00 — Manhã</option>
             <option>13:00 — Tarde</option>
@@ -64,17 +64,17 @@
         <h2 class="stitle">Onde é o serviço?</h2>
         <p class="ssub">Informe o endereço dentro do condomínio.</p>
         <div style="display:flex;flex-direction:column;gap:14px;">
-          <div class="iw"><label class="il">Condomínio / Endereço</label><input class="if" placeholder="Nome do condomínio, rua e número"></div>
-          <div class="iw"><label class="il">Apartamento / Bloco</label><input class="if" placeholder="Ex: Apto 204, Bloco B"></div>
+          <div class="iw"><label class="il">Condomínio / Endereço</label><input id="requestAddress" class="if" placeholder="Nome do condomínio, rua e número" required></div>
+          <div class="iw"><label class="il">Apartamento / Bloco</label><input id="requestUnit" class="if" placeholder="Ex: Apto 204, Bloco B"></div>
           <div class="iw"><label class="il">Tamanho do imóvel</label>
-            <select class="if">
+            <select id="propertySize" class="if">
               <option>Até 60m²</option>
               <option>60–120m²</option>
               <option selected>120–200m²</option>
               <option>Acima de 200m²</option>
             </select>
           </div>
-          <div class="iw"><label class="il">Observações</label><textarea class="if" rows="3" placeholder="Ex: tem pet, acesso pela portaria principal…"></textarea></div>
+          <div class="iw"><label class="il">Observações</label><textarea id="requestNotes" class="if" rows="3" placeholder="Ex: tem pet, acesso pela portaria principal…"></textarea></div>
         </div>
       </div>
 
@@ -100,7 +100,7 @@
 
     </div>
   </div>
-  <div class="sfoot">
+  <div class="sfoot"><div id="requestFeedback" role="status" style="max-width:var(--mx);margin:0 auto 8px;padding:0 20px;color:#a33;font-size:13px;"></div>
     <div class="sfi">
       <button class="sbkbtn" id="sbk" onclick="sBack()" style="display:none;">← Voltar</button>
       <button class="snxtbtn" id="snxt" onclick="sNext()">Próximo →</button>
@@ -108,6 +108,11 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
+
+
+
+
+

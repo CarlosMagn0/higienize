@@ -15,7 +15,7 @@
   <div class="sa">
     <div class="c" style="padding-top:4px;padding-bottom:28px;display:flex;flex-direction:column;min-height:calc(100vh - 70px);">
       <h2 class="chtitle">Como você vai usar o Higienize?</h2>
-      <p class="chsub">Você poderá alternar entre perfis a qualquer momento.</p>
+      <p class="chsub">Cadastre-se como morador ou diarista. O perfil de síndico ainda não está disponível.</p>
       <div class="chcards">
         <div class="chcard on" id="cc-c" onclick="selPerfil('c')">
           <div class="cci">01</div>
@@ -27,17 +27,21 @@
           <div class="cct">Sou diarista</div>
           <p class="ccd">Ofereço meus serviços e acesso oportunidades em residências de alto padrão com melhor remuneração.</p>
         </div>
-        <div class="chcard" id="cc-s" onclick="selPerfil('s')">
+        <div class="chcard" id="cc-s" aria-disabled="true" style="opacity:.6;cursor:not-allowed;">
           <div class="cci">03</div>
-          <div class="cct">Sou síndico</div>
+          <div class="cct">Perfil de síndico em planejamento</div>
           <p class="ccd">Controlo e organizo a entrada e atuação das profissionais dentro do condomínio com mais segurança.</p>
         </div>
       </div>
-      <a href="login.html" class="btn bd">Continuar</a>
+      <a href="cadastro.html" class="btn bd">Continuar</a>
     </div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
+
+
+
+

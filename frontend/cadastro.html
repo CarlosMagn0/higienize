@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higienize — Criar conta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page"><div class="topbar"><a href="escolha.html" class="back">←</a><span></span><span></span></div><div class="sa"><div class="c" style="padding:24px 20px;max-width:520px;margin:auto;width:100%;">
+<h2 class="logtitle" id="signupTitle">Criar conta</h2><p class="logsub">Preencha os dados para acessar o Higienize.</p>
+<form id="signupForm" style="display:flex;flex-direction:column;gap:14px;">
+<input type="hidden" name="role" value="CLIENTE">
+<div class="iw"><label class="il">Nome</label><input class="if" name="name" autocomplete="name" required></div>
+<div class="iw"><label class="il">E-mail</label><input class="if" name="email" type="email" autocomplete="email" required></div>
+<div class="iw"><label class="il">Senha (mínimo 8 caracteres)</label><input class="if" name="password" type="password" minlength="8" autocomplete="new-password" required></div>
+<div id="diaristFields" hidden><div class="iw"><label class="il">Cidade</label><input class="if" name="city"></div><div class="iw"><label class="il">Anos de experiência</label><input class="if" name="experienceYears" type="number" min="0" value="0"></div><p>O perfil de diarista ficará disponível após verificação pela plataforma.</p></div>
+<p id="signupFeedback" role="status" style="color:#a33;font-size:13px;"></p><button class="btn bd" type="submit">Criar conta</button>
+</form></div></div></div><script src="script.js?v=3"></script>
+</body></html>
+
+
+
